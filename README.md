@@ -10,16 +10,16 @@ DIY Gree Versati III modbus interface based on ESPHome
 - gree modbus connector + 2 wire cable - i used cut spare cable from gree installation package
 - usb adapter for powering the ESP32
 - cp2101 windows driver (https://www.silabs.com/developers/usb-to-uart-bridge-vcp-drivers)
-- ESP32 flashtool (https://www.espressif.com/en/support/download/other-tools)
 
 # part 1 flash ESP with ESPHome custom firmware
-1. goto HA EspHome addon and choose to create a new Device. Don't connect ESP32 yet. Fill in details and create custom firmware and download the binary file.
-1. install the latest cp2101 windows driver
-1. To flash the custom firmware, ESP32 should be set to Firmware Download mode. This can be done either by the flash tool automatically, or by holding down the Boot button and tapping the EN button. After flashing binary files, the Flash Download Tool restarts your ESP32 module and boots the flashed application by default.
-1. use flashtool to flash the downloaded firmware file
-1. When flashing was succesful the ESP device should be visible in the ESPHome addon in Home Assistant
+1. install latest cp2101 driver
+2. open HA UI in browser tab
+3. connect ESP32 to USB port
+4. goto HA EspHome addon and choose to create a new Device. Follow the on-screen instructions and when prompted select COM port connected to cp2101. Complete instructions and at the end you should have the ESP32 device with the given name listed as ONLINE ESPHome device.
+5. choose logging option to inspect the ESP32 logging wirelessy and verify it has started correctly and no errors have been logged.
 # part 2 hardware wiring
-Wire the components according to the table below
+Disconnect ESP from computer and 
+wire the components according to the table below
 |Esp32 pin|RS485 pin|Gree modbus connector|
 |--------|----------|---------------|
 |Gnd|Gnd||
@@ -29,9 +29,10 @@ Wire the components according to the table below
 ||A|A|
 ||B|B|
 
-**Make sure to place a 120 ohms resistor across the A and B pins to terminate the modbus serial line correctly.**
 # part 3 update configuration.yaml
 In part 1 a basic ESPHome firmware was flashed, which does not contain any code for managing the modbus connection. Now we are going to change that by adding the additional yaml configuration to the configurarion.yaml of the device in ESPHome and let ESPHome create a new firmware and flash it wirelessy to the device.
-1. copy the yaml configuration fragment from this file () and add it to the end of the configurarion.yaml of the device in ESPHome.
-1. choose save to store and flash it to the device.
-1. The ESP device will reboot and should start polling the modbus. You should see new entities appearing on th HA UI for all sensors and number inputs defined in the configurarion.yaml.
+1. copy the yaml configuration fragment from this file () and add it to the end of the configurarion.yaml of the device in ESPHome.(choose edit option)
+1. choose save to store changes and install it on the device.
+1. The ESP device will reboot and should start polling the modbus.
+2. Verify the red led's on the TTL/RS485 component flash every 30 seconds.
+3. If all is well you should see new entities appearing on the HA UI for all sensors and number inputs defined in the configurarion.yaml.
