@@ -18,8 +18,8 @@ DIY Gree Versati III modbus interface based on ESPHome
 4. goto HA EspHome addon and choose to create a new Device. Follow the on-screen instructions and when prompted select COM port connected to cp2101. Complete instructions and at the end you should have the ESP32 device with the given name listed as ONLINE ESPHome device.
 5. choose logging option to inspect the ESP32 logging wirelessy and verify it has started correctly and no errors have been logged.
 # part 2 hardware wiring
-Disconnect ESP from computer and 
-wire the components according to the table below
+- Disconnect ESP from computer and wire the components according to the table below.
+The modbus connector of the GREE Heatpump is located in the back of the white controller, it is the empty two wire connector. I used a plug from a spare cable of the gree installation kit. The plug does not fit very well, so you have to cut it a little bit until it fits. The polarity of the A and B wire doesn't matter, so if you reverse A and B it will still work.
 |Esp32 pin|RS485 pin|Gree modbus connector|
 |--------|----------|---------------|
 |Gnd|Gnd||
