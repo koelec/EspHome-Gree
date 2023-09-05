@@ -1,5 +1,5 @@
 # EspHome-Gree
-DIY gree versati modbus interface based on ESPHome
+DIY Gree Versati III modbus interface based on ESPHome
 ![Home Assistant UI](/gWgBYqcLsEN2S66OJ06bcFKo.jpg)
 
 # prerequisites
