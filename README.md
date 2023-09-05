@@ -20,6 +20,7 @@ DIY Gree Versati III modbus interface based on ESPHome
 # part 2 hardware wiring
 - Disconnect ESP from computer and wire the components according to the table below.
 The modbus connector of the GREE Heatpump is located in the back of the white controller, it is the empty two wire connector. I used a plug from a spare cable of the gree installation kit. The plug does not fit very well, so you have to cut it a little bit until it fits. The polarity of the A and B wire doesn't matter, so if you reverse A and B it will still work.
+
 |Esp32 pin|RS485 pin|Gree modbus connector|
 |--------|----------|---------------|
 |Gnd|Gnd||
@@ -31,7 +32,8 @@ The modbus connector of the GREE Heatpump is located in the back of the white co
 
 # part 3 update configuration.yaml
 In part 1 a basic ESPHome firmware was flashed, which does not contain any code for managing the modbus connection. Now we are going to change that by adding the additional yaml configuration to the configurarion.yaml of the device in ESPHome and let ESPHome create a new firmware and flash it wirelessy to the device.
-1. copy the yaml configuration fragment from this file [modbus-config](/versati_III_modbus_part.yaml) and add it to the end of the configurarion.yaml of the device in ESPHome.(choose edit option)
+1. Connect ESP device again and wait until device shows online in ESPHome. Note thet ESP device doesn't need to be connected to a laptop or PC, just USB poer is enough!
+2. copy the yaml configuration fragment from this file [modbus-config](/versati_III_modbus_part.yaml) and add it to the end of the configurarion.yaml of the device in ESPHome.(choose edit option)
 1. choose save to store changes and install it on the device.
 1. The ESP device will reboot and should start polling the modbus.
 2. Verify the red led's on the TTL/RS485 component flash every 30 seconds.
