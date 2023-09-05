@@ -31,7 +31,7 @@ wire the components according to the table below
 
 # part 3 update configuration.yaml
 In part 1 a basic ESPHome firmware was flashed, which does not contain any code for managing the modbus connection. Now we are going to change that by adding the additional yaml configuration to the configurarion.yaml of the device in ESPHome and let ESPHome create a new firmware and flash it wirelessy to the device.
-1. copy the yaml configuration fragment from this file () and add it to the end of the configurarion.yaml of the device in ESPHome.(choose edit option)
+1. copy the yaml configuration fragment from this file [](versati_III_modbus_part.yaml) and add it to the end of the configurarion.yaml of the device in ESPHome.(choose edit option)
 1. choose save to store changes and install it on the device.
 1. The ESP device will reboot and should start polling the modbus.
 2. Verify the red led's on the TTL/RS485 component flash every 30 seconds.
