@@ -19,4 +19,18 @@ DIY Gree Versati III modbus interface based on ESPHome
 - use flashtool to flash the downloaded firmware file
 - When flashing was succesful the ESP device should be visible in the ESPHome addon in Home Assistant
 # part 2 hardware wiring
+Wire the components according to the table below
+|Esp32 pin|RS485 pin|Gree modbus connector|
+|--------|----------|---------------|
+|Gnd|Gnd||
+|3V3|VCC||
+|GIO16|RXD||
+|GIO17|TXD||
+||A|A|
+||B|B|
+**Make sure to place a 120 ohms resistor across the A and B pins to terminate the modbus serial line correctly.**
 # part 3 update configuration.yaml
+In part 1 a basic ESPHome firmware was flashed, which does not contain any code for managing the modbus connection. Now we are going to change that by adding the additional yaml configuration to the configurarion.yaml of the device in ESPHome and let ESPHome create a new firmware and flash it wirelessy to the device.
+- copy the yaml configuration fragment from this file () and add it to the end of the configurarion.yaml of the device in ESPHome.
+- choose save to store and flash it to the device.
+- The ESP device will reboot and should start polling the modbus. You should see new entities appearing on th HA UI for all sensors and number inputs defined in the configurarion.yaml.
