@@ -5,7 +5,7 @@ DIY Gree Versati III modbus interface based on ESPHome
 # prerequisites
 - Home Assistant (HA)
 - ESP32 with cp2101 [on amazon](https://www.amazon.nl/dp/B071P98VTG?ref_=cm_sw_r_mwn_dp_SBXP3Q2HR019KM7MCFVS&th=1&psc=1)
-- RS485 module [on amazon](https://www.amazon.nl/dp/B07DN115BZ?ref_=cm_sw_r_mwn_dp_3SAQTGR00DE9YA1PEM5G)
+- TTL/RS485 module [on amazon](https://www.amazon.nl/dp/B07DN115BZ?ref_=cm_sw_r_mwn_dp_3SAQTGR00DE9YA1PEM5G)
 - 4 wires (dupont jumper cables or other)
 - gree modbus connector + 2 wire cable - i used cut spare cable from gree installation package
 - usb adapter for powering the ESP32
