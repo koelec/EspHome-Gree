@@ -5,7 +5,7 @@ DIY Gree Versati III Heatpump modbus interface based on ESPHome
 # prerequisites
 - Home Assistant (HA)
 - ESP32 with cp2101 [on amazon](https://www.amazon.nl/dp/B071P98VTG?ref_=cm_sw_r_mwn_dp_SBXP3Q2HR019KM7MCFVS&th=1&psc=1)
-- TTL/RS485 module [on amazon](https://www.amazon.nl/dp/B07DN115BZ?ref_=cm_sw_r_mwn_dp_3SAQTGR00DE9YA1PEM5G or  .[ on amazon](https://www.amazon.nl/JZK-TTL-RS485-wederzijdse-automatische/dp/B09VGJCJKQ/ref=asc_df_B09VGJCJKQ/?tag=nlshogostdsp-21&linkCode=df0&hvadid=710089888508&hvpos=&hvnetw=g&hvrand=11833153590093676471&hvpone=&hvptwo=&hvqmt=&hvdev=m&hvdvcmdl=&hvlocint=&hvlocphy=1010747&hvtargid=pla-1679545185960&psc=1&mcid=18edd98694883752a51b49ac409b2db4&gad_source=1)
+- TTL/RS485 module [on amazon](https://www.amazon.nl/JZK-TTL-RS485-wederzijdse-automatische/dp/B09VGJCJKQ/ref=asc_df_B09VGJCJKQ/?tag=nlshogostdsp-21&linkCode=df0&hvadid=710089888508&hvpos=&hvnetw=g&hvrand=11833153590093676471&hvpone=&hvptwo=&hvqmt=&hvdev=m&hvdvcmdl=&hvlocint=&hvlocphy=1010747&hvtargid=pla-1679545185960&psc=1&mcid=18edd98694883752a51b49ac409b2db4&gad_source=1)
 - 4 wires (dupont jumper cables or other)
 - gree modbus connector + 2 wire cable - i used cut spare cable from gree installation package
 - usb adapter for powering the ESP32
@@ -32,7 +32,7 @@ The modbus connector of the GREE Heatpump is located in the back of the white co
 
 # part 3 update configuration.yaml
 In part 1 a basic ESPHome firmware was flashed, which does not contain any code for managing the modbus connection. Now we are going to change that by adding the additional yaml configuration to the configurarion.yaml of the device in ESPHome and let ESPHome create a new firmware and flash it wirelessy to the device.
-1. Connect ESP device again and wait until device shows online in ESPHome. Note thet ESP device doesn't need to be connected to a laptop or PC, just USB poer is enough!
+1. Connect ESP device again and wait until device shows online in ESPHome. Note thet ESP device doesn't need to be connected to a laptop or PC, just USB port is enough!
 2. copy the yaml configuration fragment from this file [modbus-config](/versati_III_modbus_part.yaml) and add it to the end of the configurarion.yaml of the device in ESPHome.(choose edit option)
 1. choose save to store changes and install it on the device.
 1. The ESP device will reboot and should start polling the modbus.
